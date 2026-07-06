@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Creative Clima | Aire Acondicionado Costa del Sol</title>
+
+  <meta name="description" content="Instalación, reparación y mantenimiento de aire acondicionado en Torremolinos, Benalmádena, Fuengirola, Mijas, Málaga y alrededores. Presupuesto gratuito por WhatsApp.">
+
+  <style>
+    :root {
+      --navy: #061640;
+      --blue: #0067d8;
+      --sky: #19a9f5;
+      --orange: #ff6b00;
+      --light: #f4f8ff;
+      --white: #ffffff;
+      --text: #111827;
+      --muted: #5b6475;
+      --shadow: 0 16px 45px rgba(6, 22, 64, 0.16);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.55;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(10px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 6%;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 900;
+      color: var(--navy);
+      font-size: 21px;
+      letter-spacing: -0.02em;
+    }
+
+    .brand-mark {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--blue), var(--sky));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 900;
+      font-size: 26px;
+      box-shadow: 0 8px 25px rgba(0,103,216,.28);
+    }
+
+    nav {
+      display: flex;
+      gap: 22px;
+      align-items: center;
+      font-weight: 800;
+      color: var(--navy);
+      font-size: 15px;
+    }
+
+    nav a {
+      opacity: .88;
+    }
+
+    nav a:hover {
+      opacity: 1;
+      color: var(--blue);
+    }
+
+    .nav-cta {
+      background: var(--orange);
+      color: white;
+      padding: 10px 16px;
+      border-radius: 999px;
+      box-shadow: 0 8px 22px rgba(255,107,0,.25);
+    }
+
+    .hero {
+      min-height: 720px;
+      padding: 95px 6%;
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 50px;
+      align-items: center;
+      background:
+        radial-gradient(circle at 85% 20%, rgba(25,169,245,.22), transparent 30%),
+        linear-gradient(135deg, #ffffff 0%, #f4f8ff 48%, #eaf5ff 100%);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      right: -160px;
+      top: -160px;
+      width: 520px;
+      height: 520px;
+      background: linear-gradient(135deg, rgba(0,103,216,.16), rgba(25,169,245,.05));
+      border-radius: 50%;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      left: -100px;
+      bottom: -120px;
+      width: 520px;
+      height: 250px;
+      background: linear-gradient(90deg, rgba(0,103,216,.16), rgba(255,107,0,.12));
+      border-radius: 50%;
+      filter: blur(4px);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 760px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      text-transform: uppercase;
+      color: var(--blue);
+      font-weight: 900;
+      letter-spacing: .08em;
+      font-size: 13px;
+      margin: 0 0 14px;
+    }
+
+    h1 {
+      font-size: clamp(44px, 7vw, 88px);
+      line-height: .94;
+      margin: 0 0 24px;
+      color: var(--navy);
+      letter-spacing: -0.06em;
+    }
+
+    .orange {
+      color: var(--orange);
+    }
+
+    .hero-text {
+      font-size: 22px;
+      color: var(--muted);
+      max-width: 650px;
+      margin: 0 0 32px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px 22px;
+      border-radius: 15px;
+      font-weight: 900;
+      font-size: 16px;
+      box-shadow: var(--shadow);
+    }
+
+    .btn-primary {
+      background: var(--blue);
+      color: white;
+    }
+
+    .btn-secondary {
+      background: white;
+      color: var(--navy);
+      border: 2px solid #e1e9f5;
+    }
+
+    .trust-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .trust-row span {
+      background: white;
+      color: var(--navy);
+      padding: 11px 15px;
+      border-radius: 999px;
+      font-weight: 800;
+      font-size: 14px;
+      box-shadow: 0 8px 25px rgba(6,22,64,.08);
+      border: 1px solid #e6edf7;
+    }
+
+    .hero-card {
+      position: relative;
+      z-index: 2;
+      background: white;
+      border-radius: 32px;
+      padding: 30px;
+      box-shadow: var(--shadow);
+      border: 1px solid #e6edf7;
+    }
+
+    .logo-box {
+      background: linear-gradient(135deg, #ffffff, #f4f8ff);
+      border-radius: 26px;
+      padding: 34px 24px;
+      text-align: center;
+      border: 1px solid #e6edf7;
+    }
+
+    .logo-symbol {
+      width: 120px;
+      height: 120px;
+      margin: 0 auto 18px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--blue), var(--sky));
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 66px;
+      font-weight: 900;
+      box-shadow: 0 16px 40px rgba(0,103,216,.25);
+    }
+
+    .logo-title {
+      font-size: 44px;
+      line-height: .9;
+      font-weight: 900;
+      color: var(--navy);
+      letter-spacing: -0.04em;
+      margin: 0;
+    }
+
+    .logo-title span {
+      display: block;
+      color: var(--blue);
+    }
+
+    .logo-subtitle {
+      margin: 14px 0 0;
+      color: var(--muted);
+      font-weight: 800;
+      letter-spacing: .18em;
+      font-size: 12px;
+      text-transform: uppercase;
+    }
+
+    .quick-info {
+      margin-top: 22px;
+      display: grid;
+      gap: 12px;
+    }
+
+    .quick-info div {
+      background: var(--light);
+      border-radius: 18px;
+      padding: 15px 17px;
+      font-weight: 800;
+      color: var(--navy);
+      border: 1px solid #e6edf7;
+    }
+
+    .quick-info small {
+      display: block;
+      color: var(--muted);
+      font-weight: 700;
+      margin-top: 2px;
+    }
+
+    @media (max-width: 900px) {
+      .topbar {
+        padding: 12px 5%;
+      }
+
+      nav {
+        display: none;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        min-height: auto;
+        padding: 70px 5%;
+      }
+
+      .hero-text {
+        font-size: 19px;
+      }
+
+      .hero-card {
+        padding: 22px;
+      }
+
+      .logo-title {
+        font-size: 38px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="topbar">
+    <a href="#" class="brand">
+      <div class="brand-mark">C</div>
+      <span>Creative Clima</span>
+    </a>
+
+    <nav>
+      <a href="#servicios">Servicios</a>
+      <a href="#precios">Precios</a>
+      <a href="#zonas">Zonas</a>
+      <a href="#contacto" class="nav-cta">WhatsApp</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="hero-content">
+        <p class="eyebrow">❄ Español & English · Costa del Sol</p>
+
+        <h1>
+          Aire acondicionado
+          <span class="orange">con instalación incluida</span>
+        </h1>
+
+        <p class="hero-text">
+          Instalación, reparación y mantenimiento profesional de aire acondicionado para viviendas, oficinas y negocios.
+          Servicio rápido en Málaga, Torremolinos, Benalmádena, Fuengirola y Mijas.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="https://wa.me/34631384064?text=Hola%20Creative%20Clima%2C%20quiero%20pedir%20un%20presupuesto%20para%20aire%20acondicionado." target="_blank">
+            Pedir presupuesto por WhatsApp
+          </a>
+
+          <a class="btn btn-secondary" href="tel:+34631384064">
+            Llamar ahora
+          </a>
+        </div>
+
+        <div class="trust-row">
+          <span>Instalación estándar incluida</span>
+          <span>Vacío profesional</span>
+          <span>Garantía 3 años en equipo</span>
+          <span>Presupuesto sin compromiso</span>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <div class="logo-box">
+          <div class="logo-symbol">❄</div>
+          <p class="logo-title">CREATIVE <span>CLIMA</span></p>
+          <p class="logo-subtitle">Air Conditioning</p>
+        </div>
+
+        <div class="quick-info">
+          <div>
+            Tel / WhatsApp
+            <small>631 38 40 64</small>
+          </div>
+          <div>
+            Zonas de cobertura
+            <small>Fuengirola · Torremolinos · Benalmádena · Mijas · Málaga</small>
+          </div>
+          <div>
+            Atención
+            <small>Español & English</small>
+          </div>
+        </div>
+      </div>
+  </section>    <section id="servicios" style="padding:80px 6%; background:#ffffff;">
+      <div style="text-align:center; max-width:850px; margin:0 auto 40px;">
+        <p class="eyebrow">Servicio profesional</p>
+        <h2 style="font-size:clamp(32px,5vw,56px); line-height:1.05; margin:0 0 14px; color:var(--navy); letter-spacing:-0.04em;">
+          Instalación, reparación y mantenimiento
+        </h2>
+        <p style="color:var(--muted); font-size:19px;">
+          Soluciones completas para tu aire acondicionado, con trabajo limpio, materiales adecuados y puesta en marcha profesional.
+        </p>
+      </div>
+
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:20px;">
+        <article style="background:var(--light); border:1px solid #e6edf7; border-radius:24px; padding:26px;">
+          <h3>Instalación</h3>
+          <p>Instalación de equipos split y multi-split para viviendas, oficinas y negocios.</p>
+        </article>
+
+        <article style="background:var(--light); border:1px solid #e6edf7; border-radius:24px; padding:26px;">
+          <h3>Reparación</h3>
+          <p>Diagnóstico de averías, fugas, problemas eléctricos y equipos que no enfrían correctamente.</p>
+        </article>
+
+        <article style="background:var(--light); border:1px solid #e6edf7; border-radius:24px; padding:26px;">
+          <h3>Mantenimiento</h3>
+          <p>Limpieza, revisión preventiva y puesta a punto para alargar la vida del equipo.</p>
+        </article>
+
+        <article style="background:var(--light); border:1px solid #e6edf7; border-radius:24px; padding:26px;">
+          <h3>Carga de gas</h3>
+          <p>Carga de gas R32 / R410A previa revisión del sistema y comprobación de funcionamiento.</p>
+        </article>
+      </div>
+    </section>
+
+    <section style="padding:80px 6%; background:var(--light);">
+      <div style="text-align:center; max-width:850px; margin:0 auto 40px;">
+        <p class="eyebrow">Instalación estándar</p>
+        <h2 style="font-size:clamp(32px,5vw,56px); line-height:1.05; margin:0 0 14px; color:var(--navy); letter-spacing:-0.04em;">
+          ¿Qué incluye la instalación?
+        </h2>
+      </div>
+
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:18px;">
+        <div style="background:white; border-radius:22px; padding:24px; box-shadow:0 10px 30px rgba(6,22,64,.08);">
+          <strong style="color:var(--blue); font-size:22px;">Hasta 3 metros</strong>
+          <p>Tubería frigorífica incluida.</p>
+        </div>
+
+        <div style="background:white; border-radius:22px; padding:24px; box-shadow:0 10px 30px rgba(6,22,64,.08);">
+          <strong style="color:var(--blue); font-size:22px;">Hasta 2 metros</strong>
+          <p>Canaleta decorativa incluida.</p>
+        </div>
+
+        <div style="background:white; border-radius:22px; padding:24px; box-shadow:0 10px 30px rgba(6,22,64,.08);">
+          <strong style="color:var(--blue); font-size:22px;">Soportes incluidos</strong>
+          <p>Soportes de pared para la unidad exterior.</p>
+        </div>
+
+        <div style="background:white; border-radius:22px; padding:24px; box-shadow:0 10px 30px rgba(6,22,64,.08);">
+          <strong style="color:var(--blue); font-size:22px;">Vacío profesional</strong>
+          <p>Vacío, comprobación y puesta en marcha.</p>
+        </div>
+
+        <div style="background:white; border-radius:22px; padding:24px; box-shadow:0 10px 30px rgba(6,22,64,.08);">
+          <strong style="color:var(--blue); font-size:22px;">Wi-Fi</strong>
+          <p>Disponible según modelo del equipo.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="precios" style="padding:80px 6%; background:#ffffff;">
+      <div style="text-align:center; max-width:850px; margin:0 auto 40px;">
+        <p class="eyebrow">Split 1x1</p>
+        <h2 style="font-size:clamp(32px,5vw,56px); line-height:1.05; margin:0 0 14px; color:var(--navy); letter-spacing:-0.04em;">
+          Precios orientativos
+        </h2>
+        <p style="color:var(--muted); font-size:18px;">
+          Precios sin IVA. Instalación estándar incluida. Para instalaciones especiales, consulte condiciones.
+        </p>
+      </div>
+
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:24px;">
+        <article style="border:2px solid #dbeafe; border-radius:28px; padding:28px; box-shadow:var(--shadow);">
+          <h3 style="color:#168500;">Económico</h3>
+          <p>La mejor opción calidad-precio.</p>
+
+          <h4>HEC by Haier</h4>
+          <p>9.000 BTU — <strong>599 €</strong></p>
+          <p>12.000 BTU — <strong>649 €</strong></p>
+          <p>18.000 BTU — <strong>849 €</strong></p>
+          <p>24.000 BTU — <strong>999 €</strong></p>
+
+          <h4>Hisense</h4>
+          <p>9.000 BTU — <strong>649 €</strong></p>
+          <p>12.000 BTU — <strong>699 €</strong></p>
+          <p>18.000 BTU — <strong>949 €</strong></p>
+          <p>24.000 BTU — <strong>1.149 €</strong></p>
+        </article>
+
+        <article style="border:3px solid var(--blue); border-radius:28px; padding:28px; box-shadow:var(--shadow); position:relative;">
+          <div style="display:inline-block; background:var(--orange); color:white; padding:8px 14px; border-radius:999px; font-weight:900; margin-bottom:12px;">
+            Recomendado
+          </div>
+
+          <h3>Los más vendidos</h3>
+
+          <h4>Carrier</h4>
+          <p>9.000 BTU — <strong>699 €</strong></p>
+          <p>12.000 BTU — <strong>749 €</strong></p>
+          <p>18.000 BTU — <strong>999 €</strong></p>
+          <p>24.000 BTU — <strong>1.249 €</strong></p>
+
+          <h4>Bosch</h4>
+          <p>9.000 BTU — <strong>729 €</strong></p>
+          <p>12.000 BTU — <strong>779 €</strong></p>
+          <p>18.000 BTU — <strong>1.049 €</strong></p>
+          <p>24.000 BTU — <strong>1.299 €</strong></p>
+        </article>
+
+        <article style="border:3px solid var(--orange); border-radius:28px; padding:28px; box-shadow:var(--shadow);">
+          <h3 style="color:var(--orange);">Premium</h3>
+          <p>Máximo confort, eficiencia y tecnología.</p>
+
+          <h4>Daikin</h4>
+          <p>Desde <strong>899 €</strong></p>
+
+          <h4>Mitsubishi Electric</h4>
+          <p>Desde <strong>899 €</strong></p>
+
+          <h4>Fujitsu</h4>
+          <p>Desde <strong>849 €</strong></p>
+
+          <h4>Panasonic</h4>
+          <p>Desde <strong>849 €</strong></p>
+
+          <p><em>Y muchas marcas más a tu disposición.</em></p>
+        </article>
+      </div>
+    </section>    <section id="zonas" style="padding:80px 6%; background:var(--navy); color:white; text-align:center;">
+      <p class="eyebrow" style="color:#9ddcff;">Costa del Sol</p>
+      <h2 style="font-size:clamp(32px,5vw,56px); line-height:1.05; margin:0 0 18px; color:white; letter-spacing:-0.04em;">
+        Zonas de cobertura
+      </h2>
+      <p style="font-size:23px; font-weight:800; max-width:900px; margin:0 auto;">
+        Fuengirola · Torremolinos · Benalmádena · Mijas · Málaga y alrededores
+      </p>
+    </section>
+
+    <section style="padding:80px 6%; background:var(--light); text-align:center;">
+      <p class="eyebrow">English speaking service</p>
+      <h2 style="font-size:clamp(32px,5vw,56px); line-height:1.05; margin:0 0 18px; color:var(--navy); letter-spacing:-0.04em;">
+        Professional air conditioning service
+      </h2>
+      <p style="max-width:760px; margin:0 auto; color:var(--muted); font-size:20px;">
+        We provide air conditioning installation, repairs and maintenance across the Costa del Sol.
+        Contact us on WhatsApp for a free quotation.
+      </p>
+    </section>
+
+    <section id="contacto" style="padding:80px 6%; background:linear-gradient(135deg,var(--blue),var(--navy)); color:white;">
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:35px; align-items:center;">
+        <div>
+          <p class="eyebrow" style="color:#9ddcff;">Contacto</p>
+          <h2 style="font-size:clamp(34px,5vw,60px); line-height:1.05; margin:0 0 18px; color:white; letter-spacing:-0.04em;">
+            Pide tu presupuesto por WhatsApp
+          </h2>
+          <p style="font-size:20px; color:#dbeafe;">
+            Atención en español e inglés. Respuesta rápida para instalaciones, reparaciones y mantenimiento.
+          </p>
+        </div>
+
+        <div style="background:white; color:var(--navy); border-radius:28px; padding:30px; box-shadow:var(--shadow);">
+          <p style="margin:0 0 8px; color:var(--muted); font-weight:800;">Teléfono / WhatsApp</p>
+
+          <a href="tel:+34631384064" style="display:block; font-size:42px; font-weight:900; color:var(--navy); margin-bottom:20px;">
+            631 38 40 64
+          </a>
+
+          <a href="https://wa.me/34631384064?text=Hola%20Creative%20Clima%2C%20quiero%20pedir%20un%20presupuesto%20para%20aire%20acondicionado." target="_blank" style="display:block; text-align:center; background:#25d366; color:white; padding:16px 20px; border-radius:15px; font-weight:900; margin-bottom:18px;">
+            Abrir WhatsApp
+          </a>
+
+          <p style="margin:8px 0;"><strong>Instagram:</strong> @lkcreative.clima</p>
+          <p style="margin:8px 0;"><strong>Web:</strong> www.lkcreativeclima.com</p>
+          <p style="margin:8px 0;"><strong>Horario:</strong> Próximamente</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <a href="https://wa.me/34631384064?text=Hola%20Creative%20Clima%2C%20quiero%20pedir%20un%20presupuesto." target="_blank" style="position:fixed; right:18px; bottom:18px; background:#25d366; color:white; padding:14px 18px; border-radius:999px; font-weight:900; box-shadow:var(--shadow); z-index:100;">
+    WhatsApp
+  </a>
+
+  <footer style="background:#020817; color:#b6c5df; text-align:center; padding:28px 6%;">
+    <p style="margin:0;">© 2026 Creative Clima · Air Conditioning · Costa del Sol</p>
+  </footer>
+
+</body>
+</html>
