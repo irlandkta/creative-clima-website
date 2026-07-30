@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://creativeclima.es/sitemap.xml
